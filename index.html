@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+              <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+		<meta name="description" content="Reprodutor de música com suporte à gestos">
+		<meta name="author"  name="William Humbwavali" >
+		<link rel="stylesheet" href="estilo.css">
+
+
+		<title>Reprodutor de música</title>
+	</head>
+	<body>
+		<header class="cabecalho" >
+			<div class="area-pesquisa" >
+				<input maxLength="50" placeholder="Procurar..."  id="pesquisar"  type="text">
+				<button>cancelar</button>
+			</div>
+			</label>
+			<nav class="nav" >
+			
+				<input id="navMusica"  name="item-na-nav" type="radio">
+				<input id="navFavorito"  name="item-na-nav" type="radio">
+				<input id="navConf"  name="item-na-nav" type="radio">
+				<div class="ativo"></div>
+				
+				<div class="navMusica" >
+					<label for="navMusica">
+						<i class='bx bx-music'></i>
+						<br>
+						<span>músicas</span>
+					</label>
+				</div>
+			
+				<div class="navFavorito" >
+					<label for="navFavorito" >
+						<i class='bx bx-heart'></i>
+						<br>
+						<span>favoritos</span>
+					</label>
+				</div>
+				
+				
+				<div class="navConf" >
+					<label for="navConf" >
+						<i class='bx bx-cog'></i>
+						<br>
+						<span>Configuração</span>
+					</label>
+				</div>
+			</nav>
+		</header>
+		
+		<main class="corpo" >
+		<div class="slider" >
+			<div id="containerMusica" >
+				<div class="musica-atual" >
+					<div class="pp" >
+						<i class='bx bx-music'></i>
+					</div>
+					<div id="titulo--musica-atual" ></div>
+					<div></div>
+				</div>
+			</div>
+			<div id="container-favoritos">
+				<span id="info-f">Sem músicas</span>
+			</div>
+		
+			<div id="container-configuracao" >
+			
+				<div id="idioma" >
+					<span class="titulo--difinicao" >Idioma</span>
+					<span class="opcao" >
+						<select name="idioma" >
+							<option value="pt" >pt-BR</option>
+							<option value="en" >en-US</option>
+						</select>
+					</span>
+				</div>
+				<div id="modo-escuro" >
+					<span class="titulo--difinicao" >Modo escuro</span>
+					<span class="opcao" >
+						<input type="checkbox" id="i">
+						<label for="i"><i></i></label>
+					</span>
+				</div>
+		
+				<div></div>
+				
+				<div class="informacoes" >
+					<span class="titulo--difinicao" >Informações</span>
+					<span class="opcao" >
+						<svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+							<path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/>
+						</svg>
+					</span>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="musica-atual-tela-cheia" >
+			<div id="area-de-rolagem" >
+				<div id="rolagem" >
+					<div class="barra" ></div>
+				</div>
+				
+				<div class="card" >
+					<div class="titulo">---</div>
+				
+					<div class="img" >
+						<img/>
+					</div>
+					<audio></audio>
+				</div>
+				<svg class="add-f" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="35" height="35" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+					<path d="M4 16 C1 12 2 6 7 4 12 2 15 6 16 8 17 6 21 2 26 4 31 6 31 12 28 16 25 20 16 28 16 28 16 28 7 20 4 16 Z" />
+				</svg>
+			</div>
+				
+				
+				<div id="estado" >
+					<svg id="anterior"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path d="M11.5 280.6l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2zm256 0l192 160c20.6 17.2 52.5 2.8 52.5-24.6V96c0-27.4-31.9-41.8-52.5-24.6l-192 160c-15.3 12.8-15.3 36.4 0 49.2z"/>
+					</svg>
+					<div class="pp" >
+						<svg class="play"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+						</svg>
+					</div>
+					<svg id="proximo"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<path d="M500.5 231.4l-192-160C287.9 54.3 256 68.6 256 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2zm-256 0l-192-160C31.9 54.3 0 68.6 0 96v320c0 27.4 31.9 41.8 52.5 24.6l192-160c15.3-12.8 15.3-36.4 0-49.2z"/>
+					</svg>
+					<div id="idD" >
+						<div id="tempoAtual" >00:00</div>
+						<div id="duracaoFinal" ></div>
+					</div>
+					<div id="duracao" ><input id="variedade"  class="range" type="range" min="0" max="100" value="0" step="1"  /></div>
+				<div id="container-volume" >
+					<svg fill="gray" id="minimo" width="15" height="15"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+						<path d="M215 71l-89 89H24a24 24 0 0 0-24 24v144a24 24 0 0 0 24 24h102.06L215 441c15 15 41 4.47 41-17V88c0-21.47-26-32-41-17z"/>
+					</svg>
+					<input id="volume"  class="range" type="range" min="0" max="100" value="100" step="1"  />
+					<svg fill="gray" id="maximo" width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+						<path d="M215.03 71.05L126.06 160H24c-13.26 0-24 10.74-24 24v144c0 13.25 10.74 24 24 24h102.06l88.97 88.95c15.03 15.03 40.97 4.47 40.97-16.97V88.02c0-21.46-25.96-31.98-40.97-16.97zm233.32-51.08c-11.17-7.33-26.18-4.24-33.51 6.95-7.34 11.17-4.22 26.18 6.95 33.51 66.27 43.49 105.82 116.6 105.82 195.58 0 78.98-39.55 152.09-105.82 195.58-11.17 7.32-14.29 22.34-6.95 33.5 7.04 10.71 21.93 14.56 33.51 6.95C528.27 439.58 576 351.33 576 256S528.27 72.43 448.35 19.97zM480 256c0-63.53-32.06-121.94-85.77-156.24-11.19-7.14-26.03-3.82-33.12 7.46s-3.78 26.21 7.41 33.36C408.27 165.97 432 209.11 432 256s-23.73 90.03-63.48 115.42c-11.19 7.14-14.5 22.07-7.41 33.36 6.51 10.36 21.12 15.14 33.12 7.46C447.94 377.94 480 319.54 480 256zm-141.77-76.87c-11.58-6.33-26.19-2.16-32.61 9.45-6.39 11.61-2.16 26.2 9.45 32.61C327.98 228.28 336 241.63 336 256c0 14.38-8.02 27.72-20.92 34.81-11.61 6.41-15.84 21-9.45 32.61 6.43 11.66 21.05 15.8 32.61 9.45 28.23-15.55 45.77-45 45.77-76.88s-17.54-61.32-45.78-76.86z"/>
+					</svg>
+				</div>
+				</div>
+				<div class="slider-musicas" ></div>
+			</div>
+			
+		</div>
+		</main>
+		
+		<script src="script.js"></script>
+	</body>
+</html>
