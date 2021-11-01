@@ -454,7 +454,6 @@ var volume = document.querySelector('#volume');
 	
 volume.addEventListener('input', function () {
 	audio.volume = volume.value / 100;
-	volume.value = volumr.value;
 }, false);
 
 var btnCancelar = document.querySelector('header button');
