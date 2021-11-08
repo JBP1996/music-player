@@ -3,11 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-              <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+                <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 		<meta name="description" content="Reprodutor de música com suporte à gestos">
 		<meta name="author"  name="William Humbwavali" >
 		<link rel="stylesheet" href="estilo.css">
-
 
 		<title>Reprodutor de música</title>
 	</head>
@@ -57,7 +56,9 @@
 			<div id="containerMusica" >
 				<div class="musica-atual" >
 					<div class="pp" >
-						<i class='bx bx-music'></i>
+						<svg class="play"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+						</svg>
 					</div>
 					<div id="titulo--musica-atual" ></div>
 					<div></div>
@@ -155,5 +156,6 @@
 		</main>
 		
 		<script src="script.js"></script>
+
 	</body>
 </html>
