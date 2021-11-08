@@ -1,5 +1,4 @@
-# reprodutor-de-musica
-Suporte à gestos.
+# Reprodutor de músicas
+Suporte à gestos, modo escuro, 2 idiomas.
 <img src="Imagem/F6626A0C-6172-4DD7-AABA-07D3AEDC54B3.jpeg"/>
-Veja vídeo no YouTube: https://youtu.be/Gtb9JWb8s2E <br/>
-Veja o post no Instagram: https://www.instagram.com/p/CVth76KsxD0/?utm_medium=copy_link
+Veja a publicação no Instagram: https://www.instagram.com/p/CWBETbal8G6/?utm_medium=copy_link
