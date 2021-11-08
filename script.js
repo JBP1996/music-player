@@ -2,22 +2,10 @@
 /* Olá (@_@) */
 
 var musicas = [
-	{titulo: "u're mine", img: "shilohdynasty.PNG", favorito: false, artista: "kina ft shiloh dynasty", fundo: "", caminho: "uremine.mp3"},
 	{titulo: "i’ll always be waiting for you", fundo: "", favorito: false, artista: "Shiloh dynasty", img: "shilohdynasty.PNG", caminho: "illalwaysbewaitingforyou.mp3"},
 	{titulo: "his hers", fundo: "hisherscapa.JPG", favorito: false, artista: "internet money ft don toliver, gunna & lil uzi vert", img: "internetmoneylogo.JPEG", caminho: "hishers.mp3"},
-	{titulo: "imagination", img: "shilohdynasty.PNG", artista: "shiloh dynasty", favorito: false, fundo: "", caminho: "imagination.mp3"},
-	/*{titulo: "Lucid dreams", fundo: "juicewrldfundo.jpeg", artista: "juice wrld", favorito: false, img: "juicewrld.png", caminho: "juice_wrld_lucid_dreams_dir_by_colebennett_mp3_36975.mp3"},*/
-	{titulo: "trust nobody", img: "shilohdynasty.PNG", artista: "xxxtentacion ft shiloh dynasty", favorito: false, fundo: "", caminho: "trustnobody.mp3"},
-	{titulo: "Empty hearts", img: "shilohdynasty.PNG", artista: "prxz ft shiloh dynasty", favorito: false, fundo: "", caminho: "emptyhearts.mp3"},
-	{titulo: "sing to you", img: "shilohdynasty.PNG", artista: "monty datta ft shiloh dynasty", favorito: false, fundo: "", caminho: "singtoyou.mp3"},
-	{titulo: "revenge", fundo: "tentacioncapa.JPG", artista: "xxxtentacion",img: "xxxtentacion.JPEG", favorito: false, caminho: "revenge.mp3"},
 	{titulo: "fuck love", fundo: "tentacioncapa.JPG", artista: "xxxtentacion ft trippie redd", favorito: false, img: "xxxtentacion.JPEG", caminho: "fucklove.mp3"},
-	{titulo: "need to know", artista: "doja cat", fundo: "dojacat3.jpeg", img: "dojacat1.JPEG", favorito: false, caminho: "needtoknow.mp3"},
-	/*{titulo: "say so", fundo: "sayso.jpg", artista: "doja cat", favorito: false, img: "dojacat1.jpeg", caminho: "doja_cat_say_so_official_video_mp3_63051.mp3"},*/
-	{titulo: "wishing well", fundo: "lengedsneverdie.JPEG", artista: "juice wrld", favorito: false, img: "juicewrld.PNG", caminho: "wishingwell.mp3"},
-	{titulo: "armed and dangerous", fundo: "juicewrldfundo.JPEG", artista: "juice wrld", favorito: false, img: "juicewrld.PNG", caminho: "armedanddangerous.mp3"},
 	{titulo: "smile", fundo: "lengedsneverdie.JPEG", artista: "juice wrld ft the weeknd", favorito: false, img: "juicewrld.PNG", caminho: "smile.mp3"},
-	{titulo: "Going down", fundo: "", artista: "xxxtentacion", favorito: false, img: "xxxtentacion.JPEG", caminho: "goingdown.mp3"},
 	/*{titulo: "", fundo: "", artista: "", favorito: false, img: "", caminho: ""},
 	{titulo: "", fundo: "", artista: "", favorito: false, img: "", caminho: ""},
 	{titulo: "", fundo: "", artista: "", favorito: false, img: "", caminho: ""},
