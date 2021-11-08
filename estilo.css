@@ -33,15 +33,7 @@ body {
 	overflow: hidden;
 	transition: opacity .27s ease-in;
 }
-/*
-@media screen and (min-width: 600px) {
-	.cabecalho {
-		display: none;
-	}
-	.corpo {
-		display: none;
-	}
-}*/
+
 #duracao {
 	width: 95%;
 	max-height: 10px;
@@ -127,6 +119,11 @@ body {
 	position: relative;
 }
 
+@keyframes abrirMA {
+from{bottom: -100px;}
+to {bottom: 0;}
+}
+
 #containerMusica .musica-atual {
 	width: 100%;
 	position: fixed;
@@ -142,6 +139,8 @@ body {
 	overflow: hidden;
 	z-index: 200;
 	box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.5);
+       display: none;
+animation: abrirMA .30s ease;
 }
 #estado #proximo, #estado #anterior, #estado .pp {
 	position: absolute;
@@ -179,7 +178,7 @@ body {
 	width: 60px;
 	height: 60px;
 }
-#estado .pp .play {
+.pp .play {
 	margin-left: 5.5px;
 }
 .sem-transicao {
@@ -421,11 +420,12 @@ input[type="checkbox"]:checked + label:active > i {
 	overflow: hidden;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
-	height: calc(100% - 235px);
+	height: calc(100% - 150px);
 	top: 150px;
 	left: 0;
 	
 }
+
 .slider > div {
 	flex: 0 0 100%;
 	scroll-snap-align: start;
@@ -446,6 +446,7 @@ a:active {
 }
 .artista {
 	color: gray;
+       pointer-events: none;
 }
 .opcoes {
 	position: absolute;
@@ -552,6 +553,11 @@ header {
 	background-color: rgb(50, 50, 50) !important;
 	color: white !important;
 }
+.musica-atual.modo-escuro-ativo {
+
+background-color: rgb(60, 60, 60) !important;
+
+}
 .nav label {
 	display: inline-block;
 	width: 100%;
@@ -609,14 +615,13 @@ header label {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	text-align: center;
-	line-height: 1.4em;
 	color: black;
 	z-index: 500;
 	overflow-y: auto;
 	overflow-x: hidden;
 	animation: inicio .27s ease;
 	background: rgb(240, 240, 245);
+       text-align: center;
 }
 #informacoes {
 	bottom: calc((100% - 210px) / 2);
@@ -624,7 +629,14 @@ header label {
 #informacoes div {
 	border-bottom: 0.7px solid rgba(200, 200, 200, 0.7);
 	padding: 15px;
-	text-align: left;
+	height: 50px;
+       text-align: left;
+	width: 100%;
+
+}
+
+#informacoes b {
+       font-weight: 400;
 }
 
 #informacoes div:nth-child(2) {
@@ -644,22 +656,13 @@ header button {
 }
 .fechar-informacoes {
 	position: absolute;
-	top: 0;
-	left: 10px;
-	width: 15%;
+	top: 5px;
+	left: 5px;
+	width: 10%;
 	height: 10%;
        border: none !important;
 }
 
-/*@media screen and (orientation: landscape) {
-	#estado {
-height: 45%;
-       }
-.add-f, .card .titulo {
- display: none;
-
-}
-}*/
 header i {
 font-size: 20px;
 background-color:inherit !important;
@@ -667,3 +670,17 @@ box-shadow: none !important;
 
 }
 
+.musica-atual-tela-cheia.modo-escuro-ativo input[type="range"]::-webkit-slider-runnable-track {
+	background: rgb(60, 60, 60);
+	
+}
+			
+.musica-atual-tela-cheia.modo-escuro-ativo input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	background: rgb(80, 80, 80);
+	
+}
+
+.musica-atual-tela-cheia.modo-escuro-ativo #area-de-rolagem {
+       background: rgb(70, 70, 70);
+}
