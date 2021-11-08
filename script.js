@@ -2,10 +2,22 @@
 /* Olá (@_@) */
 
 var musicas = [
+	{titulo: "u're mine", img: "shilohdynasty.PNG", favorito: false, artista: "kina ft shiloh dynasty", fundo: "", caminho: "uremine.mp3"},
 	{titulo: "i’ll always be waiting for you", fundo: "", favorito: false, artista: "Shiloh dynasty", img: "shilohdynasty.PNG", caminho: "illalwaysbewaitingforyou.mp3"},
 	{titulo: "his hers", fundo: "hisherscapa.JPG", favorito: false, artista: "internet money ft don toliver, gunna & lil uzi vert", img: "internetmoneylogo.JPEG", caminho: "hishers.mp3"},
+	{titulo: "imagination", img: "shilohdynasty.PNG", artista: "shiloh dynasty", favorito: false, fundo: "", caminho: "imagination.mp3"},
+	/*{titulo: "Lucid dreams", fundo: "juicewrldfundo.jpeg", artista: "juice wrld", favorito: false, img: "juicewrld.png", caminho: "juice_wrld_lucid_dreams_dir_by_colebennett_mp3_36975.mp3"},*/
+	{titulo: "trust nobody", img: "shilohdynasty.PNG", artista: "xxxtentacion ft shiloh dynasty", favorito: false, fundo: "", caminho: "trustnobody.mp3"},
+	{titulo: "Empty hearts", img: "shilohdynasty.PNG", artista: "prxz ft shiloh dynasty", favorito: false, fundo: "", caminho: "emptyhearts.mp3"},
+	{titulo: "sing to you", img: "shilohdynasty.PNG", artista: "monty datta ft shiloh dynasty", favorito: false, fundo: "", caminho: "singtoyou.mp3"},
+	{titulo: "revenge", fundo: "tentacioncapa.JPG", artista: "xxxtentacion",img: "xxxtentacion.JPEG", favorito: false, caminho: "revenge.mp3"},
 	{titulo: "fuck love", fundo: "tentacioncapa.JPG", artista: "xxxtentacion ft trippie redd", favorito: false, img: "xxxtentacion.JPEG", caminho: "fucklove.mp3"},
+	{titulo: "need to know", artista: "doja cat", fundo: "dojacat3.jpeg", img: "dojacat1.JPEG", favorito: false, caminho: "needtoknow.mp3"},
+	/*{titulo: "say so", fundo: "sayso.jpg", artista: "doja cat", favorito: false, img: "dojacat1.jpeg", caminho: "doja_cat_say_so_official_video_mp3_63051.mp3"},*/
+	{titulo: "wishing well", fundo: "lengedsneverdie.JPEG", artista: "juice wrld", favorito: false, img: "juicewrld.PNG", caminho: "wishingwell.mp3"},
+	{titulo: "armed and dangerous", fundo: "juicewrldfundo.JPEG", artista: "juice wrld", favorito: false, img: "juicewrld.PNG", caminho: "armedanddangerous.mp3"},
 	{titulo: "smile", fundo: "lengedsneverdie.JPEG", artista: "juice wrld ft the weeknd", favorito: false, img: "juicewrld.PNG", caminho: "smile.mp3"},
+	{titulo: "Going down", fundo: "", artista: "xxxtentacion", favorito: false, img: "xxxtentacion.JPEG", caminho: "goingdown.mp3"},
 	/*{titulo: "", fundo: "", artista: "", favorito: false, img: "", caminho: ""},
 	{titulo: "", fundo: "", artista: "", favorito: false, img: "", caminho: ""},
 	{titulo: "", fundo: "", artista: "", favorito: false, img: "", caminho: ""},
@@ -103,18 +115,24 @@ function adicionarMusica(objeto) {
 	
 	if (objeto.img !== "") {
 		img.src = "imagem/" + objeto.img;
-		pp[0].style.background = 'ghostWhite url("imagem/' + objeto.img +'") no-repeat';
-		pp[0].style.backgroundSize = '100% auto';
+		
 	} else if (img.hasAttribute('src')) {
 		img.removeAttribute('src');
-		pp[0].style.background = 'ghostWhite';
+	
 	}
 	
 	if (objeto.fundo !== "") {
-		areaDeRolagem.style.background = 'ghostWhite url("imagem/' + objeto.fundo + '") no-repeat 100% 20%';
+		areaDeRolagem.style.background = 'url("imagem/' + objeto.fundo + '") no-repeat 100% 50%';
 		areaDeRolagem.style.backgroundSize = '100% auto';
+
 	}
-	else areaDeRolagem.style.background = 'ghostWhite';
+	else {
+           if (musicaAtualTelaCheia.classList.contains('modo-escuro-ativo')) {
+            areaDeRolagem.style.background = 'rgb(70, 70, 70)';
+          } else {
+            areaDeRolagem.style.background = 'ghostWhite';
+}
+}
 }
 /* adicionar música favorita quando a música atual estiver em tela cheia */
 
@@ -194,7 +212,7 @@ var informacoes = document.querySelector('.informacoes');
 
 informacoes.addEventListener('click', function (e) {
 	var inf = document.createElement('div');
-	inf.innerHTML = '<h2 class="txt-info">Informações</h2><div>programador <span>william humbwavali</span></div><div>músicas <span>' + musicas.length + '</span></div><a target="_blank" href="http://instagram.com/williamhumbwavali"><div>me siga no instagram<span> <svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span> </div></a><div style="cursor: none !important;" class="fechar-informacoes"><svg height="25" width="25" fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg></div>' ;
+	inf.innerHTML = '<h3 class="txt-info">INFORMAÇÕES</h3><div><b>programador</b><span>William Humbwavali</span></div><div><b>músicas </b><span>' + musicas.length + '</span></div><a target="_blank" href="http://instagram.com/williamhumbwavali"><div><b>me siga no instagram</b><span> <svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span> </div></a><div style="cursor: none !important;" class="fechar-informacoes"><svg height="24" width="24" fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg></div>' ;
        if (!modo.checked)
 	      inf.id = "informacoes";
        else {
@@ -248,6 +266,10 @@ function selecionarMusica(e) {
 	if (e.target.getAttribute("class") === 'item') {
 		for (var i = 0; i < musicas.length; i++) {
 			if (e.target.textContent.indexOf(musicas[i].titulo.toLowerCase()) !== -1) {
+
+musicaAtual.style.display = "block";
+	slider.style.height = "calc(100% - 235px)";
+
 				adicionarMusica(musicas[i]);
 				audio.play();
 			}
@@ -454,6 +476,7 @@ var volume = document.querySelector('#volume');
 	
 volume.addEventListener('input', function () {
 	audio.volume = volume.value / 100;
+	volume.value = volumr.value;
 }, false);
 
 var btnCancelar = document.querySelector('header button');
@@ -485,7 +508,9 @@ var corpo = document.querySelector('.corpo');
 			
 			itemDaNav[0].parentNode.style.background = 'rgb(60, 60, 60)';
 			
-			pp[1].style.backgroundColor = 'rgb(80, 80, 80)';
+			for (var i = 0; i < pp.length; i++) {
+			     pp[i].style.backgroundColor = 'rgb(80, 80, 80)';
+                     }
 			
 			btnCancelar.style.color = 'white';
 		
@@ -499,8 +524,7 @@ var corpo = document.querySelector('.corpo');
 			
 			musicaAtualTelaCheia.classList.remove('modo-escuro-ativo');
 			
-			musicaAtual.classList.remove('modo-escuro-ativo')
-			
+			musicaAtual.classList.remove('modo-escuro-ativo');
 			document.body.className = '';
 			
 			pesquisar.className = '';
@@ -512,8 +536,9 @@ var corpo = document.querySelector('.corpo');
 			prox.style.backgroundColor = 'rgb(240, 240, 245)';
 			
 			ant.style.backgroundColor = 'rgb(240, 240, 245)';
-			
+			pp[0].style.backgroundColor = 'ghostWhite';
 			pp[1].style.backgroundColor = 'rgb(240, 240, 240)';
+                    
 			
 			itemDaNav[0].parentNode.style.background = 'white';
 		}
@@ -540,7 +565,7 @@ function definirIdioma() {
 		btnCancelar.textContent = 'cancelar';
 		
 		modoEscuroTitulo.textContent = 'modo escuro';
-              td.textContent = "informações";
+              td.textContent = "INFORMAÇÕES";
 		
 		pesquisar.setAttribute('placeholder', 'Procurar...');
 		if (musicasFavoritas.length <= 1)
@@ -559,7 +584,7 @@ function definirIdioma() {
 		modoEscuroTitulo.textContent = 'dark mode';
 		
 		pesquisar.setAttribute('placeholder', 'Search...');
-              td.textContent = "info";
+              td.textContent = "INFO";
 		
 		btnCancelar.textContent = 'cancel';
 		if (musicasFavoritas.length <= 1)
