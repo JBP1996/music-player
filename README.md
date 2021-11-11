@@ -5,9 +5,12 @@ modo escuro; <br/>
 2 idiomas.
 
 # screenshot 
-<img src="Imagem/B226D2E7-31D4-4718-ABDB-5BCA06D2D871.jpeg"/>
+<b>Orientação Retrato:</b><br/> 
+<img src="Imagem/D17F101B-AFC0-4929-B7E3-1EB72D083092.jpeg"/>
 
-<img src="Imagem/B6D9F652-1FFB-4AA1-9177-C2AA24558707.jpeg"/>
+<b>Orientação Paisagem:</b><br/> 
+
+<img src="Imagem/F8133B56-C41A-4792-83D3-37A7F6D61D52.jpeg"/>
 
 <img src="Imagem/840852A7-5DCC-484F-AA45-3AF0A9495F2C.jpeg"/>
 
