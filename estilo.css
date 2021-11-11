@@ -23,7 +23,7 @@ body {
 	left: 2.5%;
 	height: 30%;
 	user-select: none;
-	transition: opacity .27s ease-in;
+	transition: all .27s;
 }
 .card {
 	padding: 20px;
@@ -65,7 +65,16 @@ body {
 	top: calc(35% - 70px);
 	overflow: hidden;
 	background: aliceBlue;
+       transition: all .27s;
+       border: 10px solid white;
 }
+
+.musica-atual-tela-cheia.modo-escuro-ativo .img {
+
+border: 10px solid rgb(50, 50, 50);
+
+}
+
 .img img {
 	width: 100%;
 	height: auto;
@@ -82,6 +91,7 @@ body {
 	overflow: hidden;
 	text-transform: lowercase;
 	top: 50%;
+       transition: all .27s;
 }
 @keyframes abrir {
 	from {transform: translateY(100%);}
@@ -117,6 +127,7 @@ body {
 	font-size: 15px;
 	user-select: none;
 	position: relative;
+       margin-bottom: 5px;
 }
 
 @keyframes abrirMA {
@@ -512,18 +523,13 @@ header {
 	height: 40px;
 	margin-top: calc((100% - 40px) / 2);
 }
-.musica-atual .btn--abrir-musica-atual-tela-cheia  {
-	width: 25px;
-	height: 25px;
-	position: absolute;
-	top: 23px;
-	right: 37px;
-}
-.musica-atual-tela-cheia .add-f {
+
+/*.musica-atual-tela-cheia .add-f {
 	position: absolute;
 	bottom: 33%;
 	left: calc((100% - 35px) / 2);
-}
+       transition: all .27s;
+}*/
 ::-webkit-scrollbar {
     width: 7px;
     height: 7px;
@@ -661,6 +667,7 @@ header button {
 	width: 10%;
 	height: 10%;
        border: none !important;
+       overflow: hidden;
 }
 
 header i {
@@ -683,4 +690,72 @@ box-shadow: none !important;
 
 .musica-atual-tela-cheia.modo-escuro-ativo #area-de-rolagem {
        background: rgb(70, 70, 70);
+}
+
+#fechar-TC {
+    font-size: 25px;
+    border-radius: 40px;
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    overflow: hidden;
+    background: rgba(240, 240, 240, 0.2);
+}
+#estado-da-musica {
+    position: absolute;
+    width: 100%;
+    position: absolute;
+    bottom: 33%;
+    color: black;
+}
+#estado-da-musica > div {
+    display: inline-block;
+    width: 33.33%;
+    border-radius: 20px;
+    float: left;
+}
+#estado-da-musica > div i {
+   font-size: 30px;
+}
+.aleatorio {
+   color: gray;
+}
+.loop-1 {
+   width: 20px;
+   height: 20px;
+   border-radius: 50px;
+   border: 2px solid black;
+   font-size: 12px;
+   display: none;
+}
+.verdade {
+   color: black !important;
+}
+
+@media screen and (orientation: landscape) {
+       #estado {
+         height: 43%;
+        
+       }
+       .img {
+          left: 50px;
+         
+       }
+       #estado-da-musica {
+          top: calc(42% - 14px);
+          left: initial;
+          right: 50px;
+          bottom: initial;
+          width: 200px;
+         
+       }
+       .card .titulo {
+           top: calc(40% - 10px);
+           left: 200px;
+           text-align: left;
+          
+        }
+      
 }
