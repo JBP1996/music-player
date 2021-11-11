@@ -3,10 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-                <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+              <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 		<meta name="description" content="Reprodutor de música com suporte à gestos">
 		<meta name="author"  name="William Humbwavali" >
-		<link rel="stylesheet" href="estilo.css">
+		<link rel="stylesheet" href="estilonew.css">
+
 
 		<title>Reprodutor de música</title>
 	</head>
@@ -114,11 +115,17 @@
 					<div class="img" >
 						<img/>
 					</div>
+                                 <div id="fechar-TC">&times</div>
 					<audio></audio>
 				</div>
-				<svg class="add-f" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="35" height="35" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                          <div id="estado-da-musica">
+                             <div class="aleatorio"><i class="bx bx-shuffle"></i></div>
+				  <div><svg class="add-f" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="35" height="35" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
 					<path d="M4 16 C1 12 2 6 7 4 12 2 15 6 16 8 17 6 21 2 26 4 31 6 31 12 28 16 25 20 16 28 16 28 16 28 7 20 4 16 Z" />
-				</svg>
+				   </svg>
+                              </div>
+                              <div class="loop"><i class="bx bx-repeat"></i><span class="loop-1">1</span></div>
+                           </div>
 			</div>
 				
 				
@@ -155,7 +162,8 @@
 		</div>
 		</main>
 		
-		<script src="script.js"></script>
+		<script src="scriptnew.js"></script>
+
 
 	</body>
 </html>
