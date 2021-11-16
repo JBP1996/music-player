@@ -171,19 +171,24 @@ var navMusica = document.querySelector('#navMusica');
 var navFavorito = document.querySelector('#navFavorito');
 var navConf = document.querySelector('#navConf');
 
+var navAtivo = document.querySelector(".nav .ativo");
+
 navMusica.addEventListener('change', () => {
 	if(navMusica.checked) {
 		location = '#containerMusica';
+                navAtivo.style.left = "0";
 	}
 });
 navFavorito.addEventListener('change', () => {
 	if(navFavorito.checked) {
 		location = '#container-favoritos';
+                navAtivo.style.left = "33.33%";
 	}
 });
 navConf.addEventListener('change', () => {
 	if(navConf.checked) {
 		location = '#container-configuracao';
+                navAtivo.style.left = "66.66%";
 	}
 });
 
