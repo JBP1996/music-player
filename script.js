@@ -71,6 +71,7 @@ var cntrFavorito = document.getElementById('container-favoritos');
 
 var addF = document.querySelector('.add-f');
 
+
 var corpo = document.querySelector('.corpo'),
 cabecalho = document.querySelector('.cabecalho');
 
@@ -98,19 +99,12 @@ function adicionarMusica(objeto) {
 		addF.setAttribute('fill', 'none');
 		addF.style.color = 'black';
 	}
-	document.querySelector("title").textContent =  objeto.titulo + " - " + objeto.artista
 	tituloMusicaAtual.innerHTML = objeto.titulo.toLowerCase() + '<br><small class="artista">' + objeto.artista.toLowerCase() + '</small>';
 	
-	if (objeto.img !== "") {
-		img.src = "imagem/" + objeto.img;
-		
-	} else if (img.hasAttribute('src')) {
-		img.removeAttribute('src');
-	
-	}
+	img.src = "Imagem/" + objeto.img;
 	
 	if (objeto.fundo !== "") {
-		areaDeRolagem.style.background = 'url("imagem/' + objeto.fundo + '") no-repeat 100% 50%';
+		areaDeRolagem.style.background = 'url("Imagem/' + objeto.fundo + '") no-repeat 100% 10%';
 		areaDeRolagem.style.backgroundSize = '100% auto';
 
 	}
@@ -119,8 +113,8 @@ function adicionarMusica(objeto) {
             areaDeRolagem.style.background = 'rgb(70, 70, 70)';
           } else {
             areaDeRolagem.style.background = 'ghostWhite';
-}
-}
+          }
+    }
 }
 /* adicionar música favorita quando a música atual estiver em tela cheia */
 
@@ -176,19 +170,24 @@ var navMusica = document.querySelector('#navMusica');
 var navFavorito = document.querySelector('#navFavorito');
 var navConf = document.querySelector('#navConf');
 
+var navAtivo = document.querySelector(".nav .ativo");
+
 navMusica.addEventListener('change', () => {
 	if(navMusica.checked) {
 		location = '#containerMusica';
+                navAtivo.style.left = "0";
 	}
 });
 navFavorito.addEventListener('change', () => {
 	if(navFavorito.checked) {
 		location = '#container-favoritos';
+                navAtivo.style.left = "33.33%";
 	}
 });
 navConf.addEventListener('change', () => {
 	if(navConf.checked) {
 		location = '#container-configuracao';
+                navAtivo.style.left = "66.66%";
 	}
 });
 
@@ -201,7 +200,7 @@ var informacoes = document.querySelector('.informacoes');
 
 informacoes.addEventListener('click', function (e) {
 	var inf = document.createElement('div');
-	inf.innerHTML = '<h3 class="txt-info">INFORMAÇÕES</h3><div><b>programador</b><span>William Humbwavali</span></div><div><b>músicas </b><span>' + musicas.length + '</span></div><a target="_blank" href="http://instagram.com/williamhumbwavali"><div><b>me siga no instagram</b><span> <svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span> </div></a><div class="fechar-informacoes"><svg height="24" width="24" fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg></div>' ;
+	inf.innerHTML = '<h3 class="txt-info">INFORMAÇÕES</h3><div><b>programador</b><span>William Humbwavali</span></div><div><b>músicas </b><span>' + musicas.length + '</span></div><a target="_blank" href="http://instagram.com/williamhumbwavali"><div><b>meu instagram</b><span> <svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span> </div></a><div class="fechar-informacoes"><svg height="24" width="24" fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg></div>' ;
        if (!modo.checked)
 	      inf.id = "informacoes";
        else {
@@ -212,8 +211,9 @@ informacoes.addEventListener('click', function (e) {
 	document.body.appendChild(inf);
 	corpo.classList.add('desativado');
 	cabecalho.classList.add('desativado');
-	document.querySelector('.fechar-informacoes').addEventListener('touchstart', () => fecharInformacoes(inf), false);
-	document.querySelector('.fechar-informacoes').addEventListener('click', () => fecharInformacoes(inf), false);
+	document.querySelector('.fechar-informacoes').addEventListener('click', () => {
+		fecharInformacoes(inf);
+	}, false);
 })
 
 function fecharInformacoes(alvo) {
@@ -229,8 +229,7 @@ function fecharInformacoes(alvo) {
 	for (var i = 0; i < musicas.length; i++) {
 			
 		var item = document.createElement("div");
-		
-		item.className = "item";
+              item.className = "item";
 			
 		musicas.sort(function (a, b) {
 			var tituloA = a.titulo.toUpperCase();
@@ -244,7 +243,7 @@ function fecharInformacoes(alvo) {
 		item.innerHTML = musicas[i].titulo.toLowerCase() + '<br><small class="artista">' + musicas[i].artista.toLowerCase() + '</small>';
 		containerMusica.appendChild(item);
 	};
-	adicionarMusica(musicas[0]);
+      
 } ());
 
 containerMusica.addEventListener("click", selecionarMusica, false);
@@ -260,6 +259,7 @@ musicaAtual.style.display = "block";
 
 				adicionarMusica(musicas[i]);
 				audio.play();
+                           abrirTC();
 			}
 		}
 	}
@@ -295,6 +295,11 @@ function cancelarPesquisa() {
 	slider.style.height = "calc(100% - 235px)";
 	pesquisar.style.width = "90%";
 	btnCancelarPesquisa.style.display = "none";
+       pesquisar.value ="";
+       var itens = document.getElementsByClassName('item');
+       for (var i in itens) {
+		     itens[i].style.display = 'block';
+		}
 }
 
 function posicaoMusicaAtual() {
@@ -346,7 +351,9 @@ function fecharmusicaAtualTelaCheia(e) {
 	}, 270);
 }
 	
-musicaAtual.addEventListener("click", function () {
+musicaAtual.addEventListener("click", abrirTC, false);
+
+function abrirTC() {
 	if (!estaAberto) { 
 			
 		musicaAtualTelaCheia.style.display = 'block';
@@ -359,7 +366,7 @@ musicaAtual.addEventListener("click", function () {
 		estaAberto = true;
 			
 	}
-}, false);
+}
 
 /* */
 
@@ -373,7 +380,7 @@ areaDeRolagem.addEventListener("click", function (e) {
 	
 areaDeRolagem.addEventListener("touchmove", function (e) {
 	movimentoY = e.changedTouches[0].clientY - comecoY;
-	if (movimentoY > 0 && !document.querySelector('#pesquisar:focus')) {
+	if (movimentoY > 0) {
 		musicaAtualTelaCheia.style.transform = "translateY(" + movimentoY + "px)";
 		musicaAtualTelaCheia.classList.add('sem-transicao');
 		if (movimentoY > 10) estaMovendo = true;	
@@ -606,4 +613,44 @@ function definirIdioma() {
 	}
 	
 }
+document.getElementById("fechar-TC").addEventListener("click", fecharmusicaAtualTelaCheia, false);
+
+var loop = document.querySelector(".loop"),
+      btnAleatorio = document.querySelector(".aleatorio"),
+      repetir = document.querySelector(".loop-1");
+
+function musicaAleatoria() {
+   var aleatoria = Math.floor(Math.random() * musicas.length);
+   adicionarMusica(musicas[aleatoria]);
+   for (var i = 0; i < pp.length; i++) {
+		if (!(pp[i].innerHTML.indexOf("play") !== -1)) audio.play();
+	}
+}
+loop.addEventListener("click", function () {
+    if(audio.loop == false) {
+      repetir.style.display = "inline-block";
+      audio.loop = true;
+     } else {
+       repetir.style.display = "none";
+       audio.loop = false;
+     }
+}, false);
+
+btnAleatorio.addEventListener("click", function() {
+  if (!btnAleatorio.firstChild.classList.contains("verdade")) {
+   prox.removeEventListener("click", proxMusica, false);
+   ant.removeEventListener("click", musicaAnt, false);
+   prox.addEventListener("click", musicaAleatoria, false);
+   ant.addEventListener("click", musicaAleatoria, false);
+  
+   btnAleatorio.firstChild.classList.add("verdade");
+  } else {
+   prox.addEventListener("click", proxMusica, false);
+   ant.addEventListener("click", musicaAnt, false);
+   prox.removeEventListener("click", musicaAleatoria, false);
+   ant.removeEventListener("click", musicaAleatoria, false);
+btnAleatorio.firstChild.classList.remove("verdade");
+  }
+}, false);
+
 /* #FIM (@_@) */
