@@ -195,12 +195,13 @@ navConf.addEventListener('change', () => {
 /* */
 
 addF.addEventListener('touchstart', adicionarMusicaFavoritaTC , false);
+addF.addEventListener('click', adicionarMusicaFavoritaTC , false);
 
 var informacoes = document.querySelector('.informacoes');
 
 informacoes.addEventListener('click', function (e) {
 	var inf = document.createElement('div');
-	inf.innerHTML = '<h3 class="txt-info">INFORMAÇÕES</h3><div><b>programador</b><span>William Humbwavali</span></div><div><b>músicas </b><span>' + musicas.length + '</span></div><a target="_blank" href="http://instagram.com/williamhumbwavali"><div><b>me siga no instagram</b><span> <svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span> </div></a><div style="cursor: none !important;" class="fechar-informacoes"><svg height="24" width="24" fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg></div>' ;
+	inf.innerHTML = '<h3 class="txt-info">INFORMAÇÕES</h3><div><b>programador</b><span>William Humbwavali</span></div><div><b>músicas </b><span>' + musicas.length + '</span></div><a target="_blank" href="http://instagram.com/williamhumbwavali"><div><b>me siga no instagram</b><span> <svg width="20" height="20" fill="gray"  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span> </div></a><div class="fechar-informacoes"><svg height="24" width="24" fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg></div>' ;
        if (!modo.checked)
 	      inf.id = "informacoes";
        else {
@@ -211,9 +212,8 @@ informacoes.addEventListener('click', function (e) {
 	document.body.appendChild(inf);
 	corpo.classList.add('desativado');
 	cabecalho.classList.add('desativado');
-	document.querySelector('.fechar-informacoes').addEventListener('touchstart', () => {
-		fecharInformacoes(inf);
-	}, false);
+	document.querySelector('.fechar-informacoes').addEventListener('touchstart', () => fecharInformacoes(inf), false);
+	document.querySelector('.fechar-informacoes').addEventListener('click', () => fecharInformacoes(inf), false);
 })
 
 function fecharInformacoes(alvo) {
@@ -366,6 +366,10 @@ musicaAtual.addEventListener("click", function () {
 areaDeRolagem.addEventListener("touchstart", function (e) {
 	comecoY = e.targetTouches[0].clientY;
 }, false);
+
+areaDeRolagem.addEventListener("click", function (e) {
+	comecoY = e.targetTouches[0].clientY;
+}, false);
 	
 areaDeRolagem.addEventListener("touchmove", function (e) {
 	movimentoY = e.changedTouches[0].clientY - comecoY;
@@ -373,6 +377,16 @@ areaDeRolagem.addEventListener("touchmove", function (e) {
 		musicaAtualTelaCheia.style.transform = "translateY(" + movimentoY + "px)";
 		musicaAtualTelaCheia.classList.add('sem-transicao');
 		if (movimentoY > 10) estaMovendo = true;	
+	};
+}, false);
+
+// NOTA: Verificar se este codigo não tem impacto e danifica a funcionalidade no phone
+areaDeRolagem.addEventListener("click", function (e) {
+	movimentoY = e.changedTouches[0].clientY - comecoY;
+	if (!document.querySelector('#pesquisar:focus')) {
+		musicaAtualTelaCheia.style.transform = "translateY(" + movimentoY + "px)";
+		musicaAtualTelaCheia.classList.add('sem-transicao');
+		estaMovendo = true;	
 	};
 }, false);
 	
@@ -384,6 +398,18 @@ areaDeRolagem.addEventListener("touchend", function () {
 		musicaAtualTelaCheia.style.transform = "translateY(0)";
 		musicaAtualTelaCheia.style.transition = "transform .17s ease";
 	}
+	movimentoY = 0;
+	comecoY = 0;
+	estaMovendo = false;
+}, false);
+
+// NOTA: Verificar se este codigo não tem impacto e danifica a funcionalidade no phone
+areaDeRolagem.addEventListener("click", function () {
+	musicaAtualTelaCheia.classList.remove('sem-transicao');
+
+	fecharmusicaAtualTelaCheia();
+	musicaAtualTelaCheia.style.transform = "translateY(0)";
+	musicaAtualTelaCheia.style.transition = "transform .17s ease";
 	movimentoY = 0;
 	comecoY = 0;
 	estaMovendo = false;
