@@ -6,7 +6,6 @@
 * {
 	font-family: ps;
 	box-sizing: border-box;
-	user-select: none;
 	outline: 0;
 }
 			
@@ -618,7 +617,7 @@ header label {
 	overflow-x: hidden;
 	animation: inicio .27s ease;
 	background: rgb(240, 240, 245);
-       text-align: center;
+        text-align: center;
 }
 #informacoes {
 	bottom: calc((100% - 210px) / 2);
@@ -748,5 +747,9 @@ box-shadow: none !important;
            text-align: left;
           
         }
+        .nav {
+          width: 50%;
+          left: 25%;
+       }
       
 }
