@@ -14,4 +14,4 @@ Veja a publicação no Instagram: https://www.instagram.com/p/CWBETbal8G6/?utm_m
 <br/> 
 Meu instagram: http://instagram.com/williamhumbwavali
 <br/>
-Teste você mesmo: Meu site está online, testem e dizem o quê acharam: https://williamhumbwavali.github.io/music-player/#containerMusica
+Teste você mesmo: https://williamhumbwavali.github.io/music-player/#containerMusica
