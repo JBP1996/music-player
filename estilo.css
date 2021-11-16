@@ -272,7 +272,7 @@ input[type="range"]::-moz-range-thumb {
 	margin-left: 5%;
 	outline: 0;
 	padding: 10px;
-	background: white url("imagem/procura.PNG") no-repeat 15px 50%;
+	background: white url("Imagem/procura.PNG") no-repeat 15px 50%;
 	background-size: 10px 10px;
 	text-indent: 25px;
 	border: none;
@@ -282,7 +282,7 @@ input[type="range"]::-moz-range-thumb {
 	display: inline-block;
 }
 #pesquisar.modo-escuro {
-	background: rgb(70, 70, 70) url("imagem/pesquisa.PNG") no-repeat 15px 50%;
+	background: rgb(70, 70, 70) url("Imagem/pesquisa.PNG") no-repeat 15px 50%;
 	background-size: 10px 10px;
 	color: white;
 }
