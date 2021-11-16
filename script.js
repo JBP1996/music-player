@@ -99,7 +99,6 @@ function adicionarMusica(objeto) {
 		addF.setAttribute('fill', 'none');
 		addF.style.color = 'black';
 	}
-	document.querySelector("title").textContent =  objeto.titulo + " - " + objeto.artista
 	tituloMusicaAtual.innerHTML = objeto.titulo.toLowerCase() + '<br><small class="artista">' + objeto.artista.toLowerCase() + '</small>';
 	
 	img.src = "Imagem/" + objeto.img;
@@ -114,8 +113,8 @@ function adicionarMusica(objeto) {
             areaDeRolagem.style.background = 'rgb(70, 70, 70)';
           } else {
             areaDeRolagem.style.background = 'ghostWhite';
-}
-}
+          }
+    }
 }
 /* adicionar música favorita quando a música atual estiver em tela cheia */
 
