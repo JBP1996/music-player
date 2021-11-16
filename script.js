@@ -387,17 +387,6 @@ areaDeRolagem.addEventListener("touchmove", function (e) {
 	};
 }, false);
 
-// NOTA: Verificar se este codigo não tem impacto e danifica a funcionalidade no phone
-areaDeRolagem.addEventListener("click", function (e) {
-	movimentoY = e.changedTouches[0].clientY - comecoY;
-	if (!document.querySelector('#pesquisar:focus')) {
-		musicaAtualTelaCheia.style.transform = "translateY(" + movimentoY + "px)";
-		musicaAtualTelaCheia.classList.add('sem-transicao');
-		estaMovendo = true;	
-	};
-}, false);
-	
-		
 areaDeRolagem.addEventListener("touchend", function () {
 	musicaAtualTelaCheia.classList.remove('sem-transicao');
 	if (movimentoY >= 200 && estaMovendo) fecharmusicaAtualTelaCheia();
@@ -405,18 +394,6 @@ areaDeRolagem.addEventListener("touchend", function () {
 		musicaAtualTelaCheia.style.transform = "translateY(0)";
 		musicaAtualTelaCheia.style.transition = "transform .17s ease";
 	}
-	movimentoY = 0;
-	comecoY = 0;
-	estaMovendo = false;
-}, false);
-
-// NOTA: Verificar se este codigo não tem impacto e danifica a funcionalidade no phone
-areaDeRolagem.addEventListener("click", function () {
-	musicaAtualTelaCheia.classList.remove('sem-transicao');
-
-	fecharmusicaAtualTelaCheia();
-	musicaAtualTelaCheia.style.transform = "translateY(0)";
-	musicaAtualTelaCheia.style.transition = "transform .17s ease";
 	movimentoY = 0;
 	comecoY = 0;
 	estaMovendo = false;
