@@ -581,15 +581,6 @@ header label {
 	height: auto;
 	width: auto;
 }
-#navFavorito:checked ~ .ativo {
-	left: 33.3%;
-}
-#navMusica:checked ~ .ativo {
-	left: 0;
-}
-#navConf:checked ~ .ativo {
-	left: 66.6%;
-}
 #container-volume {
 	position: absolute;
 	bottom: 0;
