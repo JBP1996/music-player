@@ -102,10 +102,10 @@ function adicionarMusica(objeto) {
 	document.querySelector("title").textContent =  objeto.titulo + " - " + objeto.artista
 	tituloMusicaAtual.innerHTML = objeto.titulo.toLowerCase() + '<br><small class="artista">' + objeto.artista.toLowerCase() + '</small>';
 	
-	img.src = "imagem/" + objeto.img;
+	img.src = "Imagem/" + objeto.img;
 	
 	if (objeto.fundo !== "") {
-		areaDeRolagem.style.background = 'url("imagem/' + objeto.fundo + '") no-repeat 100% 10%';
+		areaDeRolagem.style.background = 'url("Imagem/' + objeto.fundo + '") no-repeat 100% 10%';
 		areaDeRolagem.style.backgroundSize = '100% auto';
 
 	}
