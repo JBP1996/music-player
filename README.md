@@ -1,4 +1,4 @@
-# Reprodutor de músicas
+# Music Player
 
 Suporte à gestos;<br/>
 modo escuro; <br/>
