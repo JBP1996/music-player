@@ -243,8 +243,6 @@ function fecharInformacoes(alvo) {
 		containerMusica.appendChild(item);
 	};
       
-      
-	adicionarMusica(musicas[0]);
 } ());
 
 containerMusica.addEventListener("click", selecionarMusica, false);
