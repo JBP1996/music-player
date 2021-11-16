@@ -7,6 +7,7 @@
 	font-family: ps;
 	box-sizing: border-box;
 	outline: 0;
+        cursor: default !important;
 }
 			
 body {
@@ -568,11 +569,9 @@ background-color: rgb(60, 60, 60) !important;
 	width: 100%;
 	border-radius: 0;
 	background: none;
-	cursor: none;
 }
 header input[type="radio"] {
 	display: none;
-	cursor: none;
 }
 header label {
 	background: none;
@@ -626,7 +625,7 @@ header label {
 	border-bottom: 0.7px solid rgba(200, 200, 200, 0.7);
 	padding: 15px;
 	height: 50px;
-       text-align: left;
+        text-align: left;
 	width: 100%;
 
 }
@@ -656,8 +655,8 @@ header button {
 	left: 5px;
 	width: 10%;
 	height: 10%;
-       border: none !important;
-       overflow: hidden;
+        border: none !important;
+        overflow: hidden;
 }
 
 header i {
