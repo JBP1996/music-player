@@ -744,5 +744,11 @@ box-shadow: none !important;
           width: 50%;
           left: 25%;
        }
+       #proximo {
+          right: 20%;
+       }
+       #anterior {
+          left: 20%;
+       }
       
 }
