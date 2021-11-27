@@ -193,9 +193,7 @@ navConf.addEventListener('change', () => {
 
 /* */
 
-addF.addEventListener('touchstart', adicionarMusicaFavoritaTC , false);
 addF.addEventListener('click', adicionarMusicaFavoritaTC , false);
-
 var informacoes = document.querySelector('.informacoes');
 
 informacoes.addEventListener('click', function (e) {
@@ -254,12 +252,12 @@ function selecionarMusica(e) {
 		for (var i = 0; i < musicas.length; i++) {
 			if (e.target.textContent.indexOf(musicas[i].titulo.toLowerCase()) !== -1) {
 
-musicaAtual.style.display = "block";
-	slider.style.height = "calc(100% - 235px)";
+                                musicaAtual.style.display = "block";
+	                        slider.style.height = "calc(100% - 235px)";
 
 				adicionarMusica(musicas[i]);
 				audio.play();
-                           abrirTC();
+                                abrirTC();
 			}
 		}
 	}
@@ -295,9 +293,9 @@ function cancelarPesquisa() {
 	slider.style.height = "calc(100% - 235px)";
 	pesquisar.style.width = "90%";
 	btnCancelarPesquisa.style.display = "none";
-       pesquisar.value ="";
-       var itens = document.getElementsByClassName('item');
-       for (var i in itens) {
+        pesquisar.value ="";
+        var itens = document.getElementsByClassName('item');
+        for (var i in itens) {
 		     itens[i].style.display = 'block';
 		}
 }
